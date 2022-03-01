@@ -1,249 +1,212 @@
-## SKOS VOCABULARY FOR DATA LIFE CYCLE METHODS
+## OWL ONTOLOGY FOR DATA METHODS
 
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ex: <http://www.example.com/> .
-@prefix ex1: <http://www.example.com/1/> .
-@prefix ex2: <http://www.example.com/2/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
 
 @prefix dlc: <http://www.datalifecycle.com> .
 
 
-dlc:DataMethod                  a                   skos:Concept ;
-                                skos:prefLabel      "Data Method"@en ;
-                                skos:narrower       dlc:DataCollection ,
-                                                    dlc:DataProcessing ,
-                                                    dlc:DataPublication ,
-                                                    dlc:DataUsage ,
-                                                    dlc:PostDataUsage .
+dlc:DataMethod                  a                   owl:Ontology ;
+                                dc:title            "Data Methods OWL Ontology"@en ;
+                                rdfs:comment        """
+                                """@en ;
+                                owl:versionInfo     "$Date: 2022/03/01 17:05:00 $" .
 
 
 ## DATA COLLECTION
 
-dlc:DataCollection              a                   skos:Concept ;
+dlc:DataCollection              a                   owl:Class ;
                                 skos:prefLabel      "Data Collection"@en ;
-                                skos:broader        dlc:DataMethod ;
-                                skos:narrower       dlc:DataStandardization ,
-                                                    dlc:MetadataRepresentation ,
-                                                    dlc:SemanticMapping ,
-                                                    dlc:DataSharingPlanning ,
-                                                    dlc:ConsentPlanning .
+                                rdfs:subClassOf     dlc:DataMethod .
 
-dlc:DataStandardization         a                   skos:Concept ;
+dlc:DataStandardization         a                   owl:Class ;
                                 skos:prefLabel      "Data Standardization"@en ;
                                 skos:definition     "Method to follow predefined data formats."@en ;
-                                skos:broader        dlc:DataCollection .       
+                                rdfs:subClassOf     dlc:DataCollection .       
    
 
-dlc:SemanticMapping             a                   skos:Concept ;
+dlc:SemanticMapping             a                   owl:Class ;
                                 skos:prefLabel      "Semantic Mapping"@en ;
                                 skos:definition     "Method to use semantic vocabularies."@en ;
-                                skos:broader        dlc:DataCollection .     
+                                rdfs:subClassOf     dlc:DataCollection .     
 
-dlc:DataSharingPlanning         a                   skos:Concept ;
+dlc:DataSharingPlanning         a                   owl:Class ;
                                 skos:prefLabel      "Data Sharing Planning"@en ;
                                 skos:definition     "Method to inform data subjects about data sharing."@en ;
-                                skos:broader        dlc:DataCollection .     
+                                rdfs:subClassOf     dlc:DataCollection .     
 
-dlc:ConsentPlanning             a                   skos:Concept ;
+dlc:ConsentPlanning             a                   owl:Class ;
                                 skos:prefLabel      "Consent Planning"@en ;
                                 skos:definition     "Method to provide/collect consent forms from data subjects."@en ;
-                                skos:broader        dlc:DataCollection .     
+                                rdfs:subClassOf     dlc:DataCollection .     
 
 
 ## METADATA REPRESENTATION
 
-dlc:MetadataRepresentation      a                   skos:Concept ;
+dlc:MetadataRepresentation      a                   owl:Class ;
                                 skos:prefLabel      "Metadata Representation"@en ;
-                                skos:broader        dlc:DataCollection ;
-                                skos:narrower       dlc:UsageAndLicenseTerms ,
-                                                    dlc:UseOfPID ,
-                                                    dlc:DataTypeDefinition ,
-                                                    dlc:ProvenanceCapturing ,
-                                                    dlc:Versioning ,
-                                                    dlc:DataQualityIndicator .
+                                rdfs:subClassOf     dlc:DataCollection .
 
-dlc:UsageAndLicenseTerms        a                   skos:Concept ;
+dlc:UsageAndLicenseTerms        a                   owl:Class ;
                                 skos:prefLabel      "Usage & License Terms"@en ;
                                 skos:definition     "Method to define data's legal requirements."@en ;
-                                skos:broader        dlc:MetadataRepresentation .    
+                                rdfs:subClassOf     dlc:MetadataRepresentation .    
 
-dlc:UseOfPID                    a                   skos:Concept ;
+dlc:UseOfPID                    a                   owl:Class ;
                                 skos:prefLabel      "Use of Persistent Identifier"@en ;
                                 skos:definition     "Method to use a Persistent Identifier."@en ;
-                                skos:broader        dlc:MetadataRepresentation .
+                                rdfs:subClassOf     dlc:MetadataRepresentation .
 
-dlc:DataTypeDefinition          a                   skos:Concept ;
+dlc:DataTypeDefinition          a                   owl:Class ;
                                 skos:prefLabel      "Data Type Definition"@en ;
                                 skos:definition     "Method to define the type of data."@en ;
-                                skos:broader        dlc:MetadataRepresentation .
+                                rdfs:subClassOf     dlc:MetadataRepresentation .
 
-dlc:ProvenanceCapturing         a                   skos:Concept ;
+dlc:ProvenanceCapturing         a                   owl:Class ;
                                 skos:prefLabel      "Provenance Capturing"@en ;
                                 skos:definition     "Method to provide data's historical records."@en ;
-                                skos:broader        dlc:MetadataRepresentation .
+                                rdfs:subClassOf     dlc:MetadataRepresentation .
 
-dlc:Versioning                  a                   skos:Concept ;
+dlc:Versioning                  a                   owl:Class ;
                                 skos:prefLabel      "Versioning"@en ;
                                 skos:definition     "Method to define data's versions, if exist."@en ;
-                                skos:broader        dlc:MetadataRepresentation .
+                                rdfs:subClassOf     dlc:MetadataRepresentation .
 
-dlc:DataQualityIndicator        a                   skos:Concept ;
+dlc:DataQualityIndicator        a                   owl:Class ;
                                 skos:prefLabel      "Data Quality Indicator"@en ;
                                 skos:definition     "Method to define data's completeness and quality."@en ;
-                                skos:broader        dlc:MetadataRepresentation .
+                                rdfs:subClassOf     dlc:MetadataRepresentation .
 
 
 ## DATA PROCESSING
 
-dlc:DataProcessing              a                   skos:Concept ;
+dlc:DataProcessing              a                   owl:Class ;
                                 skos:prefLabel      "Data Processing"@en ;
-                                skos:broader        dlc:DataMethod ;
-                                skos:narrower       dlc:CurationAndValidation ,
-                                                    dlc:StatisticalDisclosure ,
-                                                    dlc:Anonymization ,
-                                                    dlc:DataLinking ,
-                                                    dlc:DataSynthetization .
+                                rdfs:subClassOf     dlc:DataMethod .
 
-dlc:CurationAndValidation       a                   skos:Concept ;
+dlc:CurationAndValidation       a                   owl:Class ;
                                 skos:prefLabel      "Curation & Validation"@en ;
                                 skos:definition     "Method to organise/integrate data through controlled processes."@en ;
-                                skos:broader        dlc:DataProcessing .
+                                rdfs:subClassOf     dlc:DataProcessing .
 
-dlc:StatisticalDisclosure       a                   skos:Concept ;
+dlc:StatisticalDisclosure       a                   owl:Class ;
                                 skos:prefLabel      "Statistical Disclosure"@en ;
                                 skos:definition     "Method to restrict the accuracy of released data."@en ;
-                                skos:broader        dlc:DataProcessing .
+                                rdfs:subClassOf     dlc:DataProcessing .
 
-dlc:DataLinking                 a                   skos:Concept ;
+dlc:DataLinking                 a                   owl:Class ;
                                 skos:prefLabel      "Data Linking"@en ;
                                 skos:definition     "Method to make data linkable."@en ;
-                                skos:broader        dlc:DataProcessing .
+                                rdfs:subClassOf     dlc:DataProcessing .
 
-dlc:DataSynthetization          a                   skos:Concept ;
+dlc:DataSynthetization          a                   owl:Class ;
                                 skos:prefLabel      "Data Synthetization"@en ;
                                 skos:definition     "Method to generate synthetic data from the original set."@en ;
-                                skos:broader        dlc:DataProcessing .
+                                rdfs:subClassOf     dlc:DataProcessing .
 
 
 ## ANONYMIZATION
 
-dlc:Anonymization               a                   skos:Concept ;
+dlc:Anonymization               a                   owl:Class ;
                                 skos:prefLabel      "Anonymization"@en ;
-                                skos:broader        dlc:DataProcessing ;
-                                skos:narrower       dlc:DeIdentification ,
-                                                    dlc:DataMinimization ,
-                                                    dlc:Pseudonymization ,
-                                                    dlc:AnonymizationByEncryption .
+                                rdfs:subClassOf     dlc:DataProcessing .
 
-dlc:DeIdentification            a                   skos:Concept ;
+dlc:DeIdentification            a                   owl:Class ;
                                 skos:prefLabel      "De-Identification"@en ;
                                 skos:definition     "Method to delete/mask Personal Identifiable Information."@en ;
-                                skos:broader        dlc:Anonymization .
+                                rdfs:subClassOf     dlc:Anonymization .
 
-dlc:DataMinimization            a                   skos:Concept ;
+dlc:DataMinimization            a                   owl:Class ;
                                 skos:prefLabel      "Data Minimization"@en ;
                                 skos:definition     "Method to reduce the amount of released data."@en ;
-                                skos:broader        dlc:Anonymization .
+                                rdfs:subClassOf     dlc:Anonymization .
 
-dlc:Pseudonymization            a                   skos:Concept ;
+dlc:Pseudonymization            a                   owl:Class ;
                                 skos:prefLabel      "Pseudonymization"@en ;
                                 skos:definition     "Method to generate artificial Personal Identifiable Information."@en ;
-                                skos:broader        dlc:Anonymization .
+                                rdfs:subClassOf     dlc:Anonymization .
 
-dlc:AnonymizationByEncryption   a                   skos:Concept ;
+dlc:AnonymizationByEncryption   a                   owl:Class ;
                                 skos:prefLabel      "Anonymization by Encryption"@en ;
                                 skos:definition     "Method to encode the data through encryption keys."@en ;
-                                skos:broader        dlc:Anonymization .
+                                rdfs:subClassOf     dlc:Anonymization .
 
 
 ## DATA PUBLICATION
 
-dlc:DataPublication             a                   skos:Concept ;
+dlc:DataPublication             a                   owl:Class ;
                                 skos:prefLabel      "Data Publication"@en ;
-                                skos:broader        dlc:DataMethod ;
-                                skos:narrower       dlc:DataGovernance ,
-                                                    dlc:SystemFederation ,
-                                                    dlc:RepositorySelection ,
-                                                    dlc:EmbargoOnRelease ,
-                                                    dlc:PublishingUsingBlockchain .
+                                rdfs:subClassOf     dlc:DataMethod .
 
-dlc:DataGovernance              a                   skos:Concept ;
+dlc:DataGovernance              a                   owl:Class ;
                                 skos:prefLabel      "Data Governance"@en ;
                                 skos:definition     "Method to provide information about the data's chain of custody."@en ;
-                                skos:broader        dlc:DataPublication .
+                                rdfs:subClassOf     dlc:DataPublication .
 
-dlc:SystemFederation            a                   skos:Concept ;
+dlc:SystemFederation            a                   owl:Class ;
                                 skos:prefLabel      "System Federation"@en ;
                                 skos:definition     "Method to deposit the data into federated systems."@en ;
-                                skos:broader        dlc:DataPublication .
+                                rdfs:subClassOf     dlc:DataPublication .
 
-dlc:RepositorySelection         a                   skos:Concept ;
+dlc:RepositorySelection         a                   owl:Class ;
                                 skos:prefLabel      "Repository Selection"@en ;
                                 skos:definition     "Method to choose the data repository based on suitability."@en ;
-                                skos:broader        dlc:DataPublication .
+                                rdfs:subClassOf     dlc:DataPublication .
 
-dlc:EmbargoOnRelease            a                   skos:Concept ;
+dlc:EmbargoOnRelease            a                   owl:Class ;
                                 skos:prefLabel      "Embargo on Release"@en ;
                                 skos:definition     "Method to postpone data publishing before a specified date."@en ;
-                                skos:broader        dlc:DataPublication .
+                                rdfs:subClassOf     dlc:DataPublication .
 
-dlc:PublishingUsingBlockchain   a                   skos:Concept ;
+dlc:PublishingUsingBlockchain   a                   owl:Class ;
                                 skos:prefLabel      "Publishing Using Blockchain"@en ;
                                 skos:definition     "Method to store the data into blockchain databases."@en ;
-                                skos:broader        dlc:DataPublication .
+                                rdfs:subClassOf     dlc:DataPublication .
 
 
 ## DATA USAGE
 
-dlc:DataUsage                   a                   skos:Concept ;
+dlc:DataUsage                   a                   owl:Class ;
                                 skos:prefLabel      "Data Usage"@en ;
-                                skos:broader        dlc:DataMethod ;
-                                skos:narrower       dlc:AccessControl ,
-                                                    dlc:AlgorithmToData ,
-                                                    dlc:SecureEnvironmentSelection ,
-                                                    dlc:AlgorithmPredefinition .
+                                rdfs:subClassOf     dlc:DataMethod .
 
-dlc:AccessControl               a                   skos:Concept ;
+dlc:AccessControl               a                   owl:Class ;
                                 skos:prefLabel      "Access Control"@en ;
                                 skos:definition     "Method to implement control systems for data accessing."@en ;
-                                skos:broader        dlc:DataUsage .
+                                rdfs:subClassOf     dlc:DataUsage .
 
-dlc:AlgorithmToData             a                   skos:Concept ;
+dlc:AlgorithmToData             a                   owl:Class ;
                                 skos:prefLabel      "Algorithm to Data"@en ;
                                 skos:definition     "Method to allow data analysis only by sending the code to the data."@en ;
-                                skos:broader        dlc:DataUsage .
+                                rdfs:subClassOf     dlc:DataUsage .
 
-dlc:SecureEnvironmentSelection  a                   skos:Concept ;
+dlc:SecureEnvironmentSelection  a                   owl:Class ;
                                 skos:prefLabel      "Secure Environment Selection"@en ;
                                 skos:definition     "Method to select data environment based on security levels."@en ;
-                                skos:broader        dlc:DataUsage .
+                                rdfs:subClassOf     dlc:DataUsage .
 
-dlc:AlgorithmPredefinition      a                   skos:Concept ;
+dlc:AlgorithmPredefinition      a                   owl:Class ;
                                 skos:prefLabel      "Algorithm Predefinition"@en ;
                                 skos:definition     "Method to allow data analysis only through predefined algorithms."@en ;
-                                skos:broader        dlc:DataUsage .
+                                rdfs:subClassOf     dlc:DataUsage .
 
 
 ## POST DATA USAGE
 
-dlc:PostDataUsage               a                   skos:Concept ;
+dlc:PostDataUsage               a                   owl:Class ;
                                 skos:prefLabel      "Post Data Usage"@en ;
-                                skos:broader        dlc:DataMethod ;
-                                skos:narrower       dlc:OwnerAcknowledgment ,
-                                                    dlc:ResultArchiving .
+                                rdfs:subClassOf     dlc:DataMethod .
 
-dlc:OwnerAcknowledgment         a                   skos:Concept ;
+dlc:OwnerAcknowledgment         a                   owl:Class ;
                                 skos:prefLabel      "Owner Acknowledgment"@en ;
                                 skos:definition     "Method to request acknowledgement when secondary data is created."@en ;
-                                skos:broader        dlc:PostDataUsage .
+                                rdfs:subClassOf     dlc:PostDataUsage .
 
-dlc:ResultArchiving             a                   skos:Concept ;
+dlc:ResultArchiving             a                   owl:Class ;
                                 skos:prefLabel      "Result Archiving"@en ;
                                 skos:definition     "Method to request secondary data to be archived."@en ;
-                                skos:broader        dlc:PostDataUsage .
+                                rdfs:subClassOf     dlc:PostDataUsage .
                                 
