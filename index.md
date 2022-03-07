@@ -3,10 +3,7 @@
 
 [![DOI](https://zenodo.org/badge/465072335.svg)](https://zenodo.org/badge/latestdoi/465072335)
 
-
-<a download="custom-filename.jpg" href="/path/to/image" title="ImageName">
-    <img alt="ImageName" src="/path/to/image">
-</a>
+[citations](https://github.com/ritamargherita/DataMethods/tree/main/Citations)
 
 
 
