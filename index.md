@@ -5,20 +5,20 @@
 
 
 
-### Data Methods Ontology
+# Data Methods Ontology
 
 The Data Methods ontology can be found as a ttl file as follows.
 - [Data Methods](https://github.com/ritamargherita/DataMethods/blob/main/DataMethods.ttl)
 
-### Citations
+# Citations
 
 Details on where to find the full list on included and excluded publications can be found below.
 
-# Included
+### Included
 - [bib file](https://github.com/ritamargherita/DataMethods/blob/main/Citations/included-publications.bib)
 - [txt file](https://github.com/ritamargherita/DataMethods/blob/main/Citations/included-publications.txt)
 
-# Excluded
+### Excluded
 - [bib file](https://github.com/ritamargherita/DataMethods/blob/main/Citations/excluded-publications.bib)
 - [txt file](https://github.com/ritamargherita/DataMethods/blob/main/Citations/excluded-publications.txt)
 
