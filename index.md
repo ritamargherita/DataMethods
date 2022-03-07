@@ -5,6 +5,8 @@
 
 [citations](https://github.com/ritamargherita/DataMethods/tree/main/Citations)
 
+<a href="https://github.com/ritamargherita/DataMethods/tree/main/Citations" download>Click to Download</a>
+
 
 
 You can use the [editor on GitHub](https://github.com/ritamargherita/DataMethods/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
