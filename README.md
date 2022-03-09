@@ -1,5 +1,11 @@
 # Aligning-Restricted-Data-with-FAIR-a-Systematic-Review
 
-In this repository there are two files containing the full list of citations explored in the systematic review. One file contains the list of included papers, and the other one of excluded papers.
+This repository contains:
 
-[![DOI](https://zenodo.org/badge/465072335.svg)](https://zenodo.org/badge/latestdoi/465072335)
+- a ttl file of the Data Methods Ontology
+- a folder "Citations" where you can find both bib and txt files of the included and excluded publications
+
+
+Link to Zenodo --> [![DOI](https://zenodo.org/badge/465072335.svg)](https://zenodo.org/badge/latestdoi/465072335)
+
+For further questions, contact: Margherita Martorana at m.martorana@vu.nl
